@@ -1,8 +1,9 @@
 {
   "name": "functer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Functors in TypeScript",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib/**/*"
   ],
@@ -10,14 +11,21 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint src/*.ts",
-    "test": "jest --config jestconfig.json"
+    "test": "jest --config jestconfig.json",
+    "prepublishOnly": "npm test && npm run lint",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/futantan/functer.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "functor"
+  ],
+  "author": "futantan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/futantan/functer/issues"
