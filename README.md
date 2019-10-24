@@ -18,4 +18,8 @@
   <a href="https://circleci.com/gh/futantan/functer">
     <img src="https://circleci.com/gh/futantan/functer.svg?style=svg" />
   </a>
+
+  <a href="https://codecov.io/gh/futantan/functer">
+    <img src="https://codecov.io/gh/futantan/functer/branch/master/graph/badge.svg" />
+  </a>
 </p>
