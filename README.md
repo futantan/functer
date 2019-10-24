@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/futantan/functer/master/img/logo.png" style="width: 300px;" alt="Functer" />
+  <img src="https://raw.githubusercontent.com/futantan/functer/master/img/logo.png" width="300" alt="Functer" />
 </p>
 
 <h3 align="center">
