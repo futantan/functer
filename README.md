@@ -23,3 +23,4 @@
     <img src="https://codecov.io/gh/futantan/functer/branch/master/graph/badge.svg" />
   </a>
 </p>
+
