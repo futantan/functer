@@ -20,5 +20,7 @@
   <a href="https://codecov.io/gh/futantan/functer">
     <img src="https://codecov.io/gh/futantan/functer/branch/master/graph/badge.svg" />
   </a>
+  
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/functer">
 </p>
 
