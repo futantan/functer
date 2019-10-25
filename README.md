@@ -9,8 +9,6 @@
 <br>
 
 <p align="center">
-  <img src="https://github.com/futantan/functer/workflows/CI/badge.svg" />
-
   <a href="https://codeclimate.com/github/futantan/functer/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/99c42cb6a6b963b31e87/maintainability" />
   </a>
