@@ -1,4 +1,4 @@
-import { Functor, Monad } from './typing'
+import { Monad } from './typing'
 
 let never: never
 
