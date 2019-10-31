@@ -18,13 +18,13 @@ export class Maybe<T> implements Omit<Monad<T>, 'of'> {
     return new Maybe<never>(null)
   }
 
-  static of<T>(value: T | null): Maybe<T> {
+  static of<T>(value: T | null | undefined): Maybe<T> {
     return value == null ? Maybe.Nothing : Maybe.Just<T>(value)
   }
 
   private constructor(private v: T | null) {}
 
-  map<U>(f: (x: NonNullable<T>) => U): Maybe<U> {
+  map<U>(f: (x: NonNullable<T>) => U | null | undefined): Maybe<U> {
     return this.v == null ? Maybe.Nothing : Maybe.of<U>(f(this.v!))
   }
 
