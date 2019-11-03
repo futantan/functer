@@ -1,6 +1,7 @@
 import * as R from 'ramda'
 import { Left } from './Left'
 import { Right } from './Right'
+import { Maybe, Nothing, Just } from '../Maybe'
 
 type _Either<L, R> = Left<L> | Right<R>
 
@@ -13,6 +14,14 @@ export class Either<L, R> {
 
   get isRight(): boolean {
     return this.v instanceof Right
+  }
+
+  get leftValue(): Maybe<L> {
+    return this.isLeft ? Just(this.v.value as L) : Nothing
+  }
+
+  get rightValue(): Maybe<R> {
+    return this.isRight ? Just(this.v.value as R) : Nothing
   }
 
   static left<L, R>(value: L): Either<L, R> {
