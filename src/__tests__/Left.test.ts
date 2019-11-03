@@ -23,7 +23,7 @@ test('should do nothing when call chain', () => {
   expect(val.value).toEqual('left')
 })
 
-test('should do nothing when call map', () => {
+test('should do nothing when call ap', () => {
   const val = Left.of('left')
 
   val.ap(Left.of(() => 64))
