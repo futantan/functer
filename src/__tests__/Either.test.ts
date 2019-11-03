@@ -34,3 +34,16 @@ test('rightValue should be nothing when value exists', () => {
   const val = Either.left(2)
   expect(val.rightValue.value).toBe(null)
 })
+
+test('map should be apply to either when value is right', () => {
+  const val = Either.right(2)
+  const v = val.map(inc)
+  expect(v.rightValue.value).toBe(3)
+})
+
+test('map should not be apply to either when value is left', () => {
+  const val = Either.left<string, number>('some errors occurred')
+  const v = val.map(inc)
+  expect(v.rightValue.value).toBe(null)
+  expect(v.leftValue.value).toEqual('some errors occurred')
+})
