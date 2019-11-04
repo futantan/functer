@@ -42,8 +42,38 @@ test('map should be apply to either when value is right', () => {
 })
 
 test('map should not be apply to either when value is left', () => {
-  const val = Either.left<string, number>('some errors occurred')
+  const val = Either.left('some errors occurred')
   const v = val.map(inc)
   expect(v.rightValue.value).toBe(null)
   expect(v.leftValue.value).toEqual('some errors occurred')
+})
+
+test('ap should return self when value is left', () => {
+  const fn = Either.right(inc)
+  const fa = Either.left('some errors occurred')
+  const result = fa.ap(fn)
+  expect(result.leftValue.value).toEqual(fa.leftValue.value)
+  expect(result.rightValue.value).toEqual(fa.rightValue.value)
+})
+
+test('ap should return 2 when value is right', () => {
+  const fn = Either.right(inc)
+  const fa = Either.right(1)
+  const result = fa.ap(fn)
+  expect(result.rightValue.value).toBe(2)
+})
+
+test('chain should return self when value is left', () => {
+  const f = (a: number) => Either.right(`current val is: ${a}`)
+  const fa = Either.left('some errors occurred')
+  const result = fa.chain(f)
+  expect(result.leftValue.value).toEqual(fa.leftValue.value)
+  expect(result.rightValue.value).toEqual(fa.rightValue.value)
+})
+
+test('chain should return correct string when value is right', () => {
+  const f = (a: number) => Either.right(`current val is: ${a}`)
+  const fa = Either.right(1)
+  const result = fa.chain(f)
+  expect(result.rightValue.value).toEqual('current val is: 1')
 })
